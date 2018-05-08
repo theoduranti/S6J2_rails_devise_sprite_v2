@@ -1313,3 +1313,185 @@ Processing by EventsController#index as HTML
 Completed 200 OK in 56ms (Views: 52.1ms | ActiveRecord: 0.5ms)
 
 
+Started GET "/" for 127.0.0.1 at 2018-05-08 13:34:43 +0200
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/duranti/.rvm/gems/ruby-2.3.4/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:2
+  Rendered home/index.html.erb within layouts/application (18.3ms)
+  Rendered layouts/_header.html.erb (0.5ms)
+Completed 200 OK in 274ms (Views: 264.8ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-05-08 13:34:45 +0200
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:16
+  Rendered events/index.html.erb within layouts/application (21.8ms)
+  Rendered layouts/_header.html.erb (0.6ms)
+Completed 200 OK in 86ms (Views: 73.8ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/events/new" for 127.0.0.1 at 2018-05-08 13:34:49 +0200
+Processing by EventsController#new as HTML
+  Rendering events/new.html.erb within layouts/application
+  Rendered events/_form.html.erb (34.8ms)
+  Rendered events/new.html.erb within layouts/application (38.8ms)
+  Rendered layouts/_header.html.erb (0.5ms)
+Completed 200 OK in 80ms (Views: 75.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-05-08 13:34:51 +0200
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:16
+  Rendered events/index.html.erb within layouts/application (9.5ms)
+  Rendered layouts/_header.html.erb (0.7ms)
+Completed 200 OK in 72ms (Views: 67.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/events/new" for 127.0.0.1 at 2018-05-08 13:34:53 +0200
+Processing by EventsController#new as HTML
+  Rendering events/new.html.erb within layouts/application
+  Rendered events/_form.html.erb (27.0ms)
+  Rendered events/new.html.erb within layouts/application (39.7ms)
+  Rendered layouts/_header.html.erb (0.5ms)
+Completed 200 OK in 130ms (Views: 117.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-05-08 13:34:54 +0200
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:16
+  Rendered events/index.html.erb within layouts/application (9.1ms)
+  Rendered layouts/_header.html.erb (0.5ms)
+Completed 200 OK in 76ms (Views: 69.4ms | ActiveRecord: 0.5ms)
+
+
+Started DELETE "/events/1" for 127.0.0.1 at 2018-05-08 13:35:03 +0200
+Processing by EventsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"4mwuHWiDYji1+JzdA5BwKiSB4Y/GMIdRgXwDfyMTMRJUVYkMV73fVj19IdzYJZT1HUaQYh783GC3WlmtNUUpMg==", "id"=>"1"}
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:73
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/events_controller.rb:63
+  [1m[36mEvent Destroy (1.3ms)[0m  [1m[31mDELETE FROM "events" WHERE "events"."id" = ?[0m  [["id", 1]]
+  ↳ app/controllers/events_controller.rb:63
+  [1m[35m (6.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/events_controller.rb:63
+Redirected to http://localhost:3000/events
+Completed 302 Found in 18ms (ActiveRecord: 8.0ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-05-08 13:35:03 +0200
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:16
+  Rendered events/index.html.erb within layouts/application (10.8ms)
+  Rendered layouts/_header.html.erb (0.8ms)
+Completed 200 OK in 61ms (Views: 58.7ms | ActiveRecord: 0.6ms)
+
+
+Started DELETE "/events/2" for 127.0.0.1 at 2018-05-08 13:35:07 +0200
+Processing by EventsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"0CPLlMCQxpol1+OQcvHR7BJkRcUfCsBAGjUmlp9y9bVmGmyF/6579K1SXpGpRDUzK6M0KMfGm3EsE3xEiSTtlQ==", "id"=>"2"}
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:73
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/events_controller.rb:63
+  [1m[36mEvent Destroy (1.1ms)[0m  [1m[31mDELETE FROM "events" WHERE "events"."id" = ?[0m  [["id", 2]]
+  ↳ app/controllers/events_controller.rb:63
+  [1m[35m (14.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/events_controller.rb:63
+Redirected to http://localhost:3000/events
+Completed 302 Found in 22ms (ActiveRecord: 15.8ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-05-08 13:35:07 +0200
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:16
+  Rendered events/index.html.erb within layouts/application (4.5ms)
+  Rendered layouts/_header.html.erb (0.5ms)
+Completed 200 OK in 60ms (Views: 57.8ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/events/3" for 127.0.0.1 at 2018-05-08 13:35:11 +0200
+Processing by EventsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"bRfEuySvrOry9x3sdGuUjlVnxkBw4pkjaxx7ekIJtdrbLmOqG5ERhHpyoO2v3nBRbKC3raguwhJdOiGoVF+t+g==", "id"=>"3"}
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:73
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/events_controller.rb:63
+  [1m[36mEvent Destroy (0.2ms)[0m  [1m[31mDELETE FROM "events" WHERE "events"."id" = ?[0m  [["id", 3]]
+  ↳ app/controllers/events_controller.rb:63
+  [1m[35m (8.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/events_controller.rb:63
+Redirected to http://localhost:3000/events
+Completed 302 Found in 14ms (ActiveRecord: 9.3ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-05-08 13:35:11 +0200
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:16
+  Rendered events/index.html.erb within layouts/application (4.3ms)
+  Rendered layouts/_header.html.erb (0.5ms)
+Completed 200 OK in 35ms (Views: 32.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/events/new" for 127.0.0.1 at 2018-05-08 13:35:15 +0200
+Processing by EventsController#new as HTML
+  Rendering events/new.html.erb within layouts/application
+  Rendered events/_form.html.erb (8.6ms)
+  Rendered events/new.html.erb within layouts/application (14.1ms)
+  Rendered layouts/_header.html.erb (0.6ms)
+Completed 200 OK in 58ms (Views: 54.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/events" for 127.0.0.1 at 2018-05-08 13:35:41 +0200
+Processing by EventsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"7N7yTs3qaH6qlK1d8hz7dotZGDKUNscPXWOCEiIkB1oHGV7vY+ZiZwWr7kVo/nt7OdrMtVG0omsIn6aTLsuK0A==", "event"=>{"description"=>"ride 2", "date(1i)"=>"2018", "date(2i)"=>"10", "date(3i)"=>"8", "date(4i)"=>"11", "date(5i)"=>"35", "place"=>"oceans"}, "commit"=>"Create Event"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:32
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/events_controller.rb:36
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:36
+  [1m[36mEvent Create (0.5ms)[0m  [1m[32mINSERT INTO "events" ("description", "date", "place", "created_at", "updated_at", "creator_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["description", "ride 2"], ["date", "2018-10-08 11:35:00"], ["place", "oceans"], ["created_at", "2018-05-08 11:35:41.252687"], ["updated_at", "2018-05-08 11:35:41.252687"], ["creator_id", 3]]
+  ↳ app/controllers/events_controller.rb:36
+  [1m[35m (5.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/events_controller.rb:36
+Redirected to http://localhost:3000/events/6
+Completed 302 Found in 60ms (ActiveRecord: 6.8ms)
+
+
+Started GET "/events/6" for 127.0.0.1 at 2018-05-08 13:35:41 +0200
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:73
+  Rendering events/show.html.erb within layouts/application
+  Rendered events/show.html.erb within layouts/application (0.9ms)
+  Rendered layouts/_header.html.erb (0.5ms)
+Completed 200 OK in 24ms (Views: 20.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-05-08 13:35:46 +0200
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:16
+  Rendered events/index.html.erb within layouts/application (8.8ms)
+  Rendered layouts/_header.html.erb (0.6ms)
+Completed 200 OK in 62ms (Views: 58.4ms | ActiveRecord: 0.5ms)
+
+
