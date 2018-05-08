@@ -24,13 +24,13 @@ class EventsController < ApplicationController
   # POST /events
   # POST /events.json
   def create
-	
-
-
     @event = Event.new(event_params)
 
     user = current_user.id
     @event.creator_id = user
+
+    attendee = current_user.id
+    @event.attendee_id = attendee
 
     respond_to do |format|
       if @event.save
@@ -40,6 +40,19 @@ class EventsController < ApplicationController
         format.html { render :new }
         format.json { render json: @event.errors, status: :unprocessable_entity }
       end
+    end
+  end
+
+  def subscribe
+    @event = Event.find(params[:id])
+    if 
+    @event.attendees.include? current_user
+    flash[:error] = "Vous participez déjà à l'événement !" 
+    redirect_to @event
+    else
+    @event.attendees << current_user
+    flash[:success] = "Vous participez à l'événement !" 
+    redirect_to @event
     end
   end
 
