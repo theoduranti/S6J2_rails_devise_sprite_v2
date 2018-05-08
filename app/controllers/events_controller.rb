@@ -45,14 +45,13 @@ class EventsController < ApplicationController
 
   def subscribe
     @event = Event.find(params[:id])
-    if 
-    @event.attendees.include? current_user
-    flash[:error] = "Vous participez déjà à l'événement !" 
-    redirect_to @event
+    if @event.attendees.include? current_user
+      flash[:error] = "Vous participez déjà à l'événement !" 
+      redirect_to @event
     else
-    @event.attendees << current_user
-    flash[:success] = "Vous participez à l'événement !" 
-    redirect_to @event
+      @event.attendees << current_user
+      flash[:success] = "Vous participez à l'événement !" 
+      redirect_to @event
     end
   end
 
